@@ -7,47 +7,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #ffffff;
-      --text-color: #111111;
-      --primary-color: #043872;
-      --secondary-color: #0052cc;
-      --accent-color: #007aff;
+      --bg-color: #f9fafb;
+      --text-color: #111;
+      --primary-color: #004aad;
+      --secondary-color: #007aff;
+      --accent-color: #00b4d8;
+      --card-bg: #ffffff;
     }
 
     body.dark {
-      --bg-color: #0a0a0a;
+      --bg-color: #0e0e0e;
       --text-color: #f1f1f1;
-      --primary-color: #89aaff;
-      --secondary-color: #3366ff;
-      --accent-color: #7fa6ff;
+      --primary-color: #7faaff;
+      --secondary-color: #3399ff;
+      --accent-color: #4dd0e1;
+      --card-bg: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       font-family: 'Pretendard', sans-serif;
-      background-color: var(--bg-color);
+      background: linear-gradient(to bottom, var(--bg-color), #e0f7fa);
       color: var(--text-color);
       transition: all 0.4s ease;
     }
 
     nav {
-      background-color: var(--bg-color);
+      background-color: var(--card-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 3rem;
-      border-bottom: 1px solid #ddd;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
     nav a {
-      margin: 0 1rem;
+      margin: 0 0.8rem;
       color: var(--text-color);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -56,10 +62,10 @@
 
     button {
       background: var(--primary-color);
-      color: white;
+      color: #fff;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -69,54 +75,61 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 960px;
       margin: auto;
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
 
     .section {
       display: none;
-      animation: fadeIn 0.6s ease-in-out;
+      animation: fadeIn 0.5s ease;
     }
 
     .section.active {
       display: block;
     }
 
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
     h1, h2 {
       color: var(--primary-color);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5rem;
-      background: #f3f3f3;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    body.dark table {
-      background: #1b1b1b;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.8rem;
-      text-align: left;
-    }
-
-    th {
-      background: var(--primary-color);
-      color: white;
     }
 
     ul li {
       line-height: 1.8;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.2rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.9rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    body.dark table {
+      background: #1c1c1c;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -126,14 +139,14 @@
         align-items: flex-start;
       }
       nav a {
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <div><strong style="font-size: 1.2rem;">허보영 포트폴리오</strong></div>
+    <div><strong style="font-size: 1.3rem;">허보영 포트폴리오</strong></div>
     <div>
       <a href="#" onclick="showSection('home')">홈</a>
       <a href="#" onclick="showSection('education')">학력</a>
@@ -141,59 +154,58 @@
       <a href="#" onclick="showSection('certificates')">자격증</a>
       <a href="#" onclick="showSection('awards')">수상</a>
       <a href="#" onclick="showSection('contact')">연락처</a>
-      <button onclick="toggleDarkMode()">색변경</button>
+      <button onclick="toggleDarkMode()">모드</button>
     </div>
   </nav>
 
   <div class="container">
-    <section id="home" class="section active">
-      <h1>안녕하세요 허보영입니다</h1>
-      <p>충주상업고등학교 졸업 예정이며 영상편집,촬열 디자인에 열정을 가진 PD지망생입니다</p>
+    <section id="home" class="section active card">
+      <h1>안녕하세요 👋<br>허보영입니다</h1>
+      <p>충주상업고등학교 졸업 예정이며<br>영상편집, 촬영, 디자인에 열정을 가진 PD 지망생입니다.</p>
     </section>
 
-    <section id="education" class="section">
+    <section id="education" class="section card">
       <h2>학력</h2>
-      <p>충주예성여자중학교 졸업</p>
-      <p>충주상업고등학교 졸업 예정</p>
+      <ul>
+        <li>충주예성여자중학교 졸업</li>
+        <li>충주상업고등학교 졸업 예정</li>
+      </ul>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section card">
       <h2>기술 스택</h2>
       <ul>
-        <li>포토샵</li>
-        <li>프리미어프로</li>
-        <li>애프터이펙트</li>
-        <li>캡컷 등등</li>
+        <li>Adobe Photoshop</li>
+        <li>Adobe Premiere Pro</li>
+        <li>Adobe After Effects</li>
+        <li>CapCut 외 영상툴</li>
       </ul>
     </section>
 
-    <section id="certificates" class="section">
+    <section id="certificates" class="section card">
       <h2>자격증</h2>
-      <h3>ITQ</h3>
       <ul>
-        <li>엑셀 (2023 취득)</li>
-        <li>한글 (2023 취득)</li>
+        <li>ITQ 엑셀 (2023 취득)</li>
+        <li>ITQ 한글 (2023 취득)</li>
       </ul>
     </section>
 
-    <section id="awards" class="section">
+    <section id="awards" class="section card">
       <h2>수상 이력</h2>
       <table>
         <thead>
-          <tr>
-            <th>수상일자</th><th>수상명</th><th>수상내용</th><th>수상기관</th>
-          </tr>
+          <tr><th>수상일자</th><th>수상명</th><th>내용</th><th>기관</th></tr>
         </thead>
         <tbody>
-          <tr><td>2025.05.29</td><td>충북상업경진대회</td><td>대회 홍보 크리에이터 금상</td><td>충북교육청</td></tr>
+          <tr><td>2025.05.29</td><td>충북상업경진대회</td><td>홍보 크리에이터 금상</td><td>충북교육청</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section card">
       <h2>연락처</h2>
-      <p>이메일: <a href="mailto:eunhak0319@gmail.com">sgagjq132@gmail.com</a></p>
-      <p>인스타그램: <a href="https://instagram.com/dud7__23" target="_blank">@dud7__23</a></p>
+      <p>📧 이메일: <a href="mailto:sgagjq132@gmail.com">sgagjq132@gmail.com</a></p>
+      <p>📸 인스타그램: <a href="https://instagram.com/dud7__23" target="_blank">@dud7__23</a></p>
     </section>
   </div>
 
