@@ -42,8 +42,7 @@
 ## 📬 연락처
 
 - 📧 이메일: [sgagjq132@gmail.com](mailto:sgagjq132@gmail.com)
-- 📸 인스타그램: [@dud7__23](https://instagram.com/eh_lee19)
-- 🐦 X (구 트위터): [@young_723_](https://blog.naver.com/nsw1ss)
+- 📸 인스타그램: [@dud7__23](https://instagram.com/dud7__23)
 
 ---
 
@@ -54,5 +53,5 @@
 
 ---
 
-> 개발자나 영상 PD를 꿈꾸는 저의 성장을 지켜봐 주세요!  
+> 영상 PD를 꿈꾸는 저의 성장을 지켜봐 주세요!  
 > 감사합니다 🙇‍♀️
