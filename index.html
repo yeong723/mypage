@@ -4,149 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>허보영 포트폴리오</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f9fafb;
-      --text-color: #111;
-      --primary-color: #004aad;
-      --secondary-color: #007aff;
-      --accent-color: #00b4d8;
-      --card-bg: #ffffff;
-    }
-
-    body.dark {
-      --bg-color: #0e0e0e;
-      --text-color: #f1f1f1;
-      --primary-color: #7faaff;
-      --secondary-color: #3399ff;
-      --accent-color: #4dd0e1;
-      --card-bg: #1a1a1a;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Pretendard', sans-serif;
-      background: linear-gradient(to bottom, var(--bg-color), #e0f7fa);
-      color: var(--text-color);
-      transition: all 0.4s ease;
-    }
-
-    nav {
-      background-color: var(--card-bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      margin: 0 0.8rem;
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    button {
-      background: var(--primary-color);
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: var(--secondary-color);
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-    }
-
-    .section {
-      display: none;
-      animation: fadeIn 0.5s ease;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-    }
-
-    h1, h2 {
-      color: var(--primary-color);
-    }
-
-    ul li {
-      line-height: 1.8;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.2rem;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.9rem;
-      text-align: left;
-    }
-
-    th {
-      background: var(--primary-color);
-      color: #fff;
-    }
-
-    body.dark table {
-      background: #1c1c1c;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav a {
-        margin: 0.3rem 0;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
-    <div><strong style="font-size: 1.3rem;">허보영 포트폴리오</strong></div>
+    <div><strong class="logo">허보영 포트폴리오</strong></div>
     <div>
       <a href="#" onclick="showSection('home')">홈</a>
       <a href="#" onclick="showSection('education')">학력</a>
@@ -209,15 +72,6 @@
     </section>
   </div>
 
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
