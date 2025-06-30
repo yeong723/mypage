@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>허보영 포트폴리오</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --primary-color: #043872;
+      --secondary-color: #0052cc;
+      --accent-color: #007aff;
+    }
+
+    body.dark {
+      --bg-color: #0a0a0a;
+      --text-color: #f1f1f1;
+      --primary-color: #89aaff;
+      --secondary-color: #3366ff;
+      --accent-color: #7fa6ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.4s ease;
+    }
+
+    nav {
+      background-color: var(--bg-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--secondary-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: var(--primary-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      background: #f3f3f3;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    body.dark table {
+      background: #1b1b1b;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    ul li {
+      line-height: 1.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong style="font-size: 1.2rem;">허보영 포트폴리오</strong></div>
+    <div>
+      <a href="#" onclick="showSection('home')">홈</a>
+      <a href="#" onclick="showSection('education')">학력</a>
+      <a href="#" onclick="showSection('skills')">기술</a>
+      <a href="#" onclick="showSection('certificates')">자격증</a>
+      <a href="#" onclick="showSection('awards')">수상</a>
+      <a href="#" onclick="showSection('contact')">연락처</a>
+      <button onclick="toggleDarkMode()">색변경</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section id="home" class="section active">
+      <h1>안녕하세요 허보영입니다</h1>
+      <p>충주상업고등학교 졸업 예정이며 영상편집,촬열 디자인에 열정을 가진 PD지망생입니다</p>
+    </section>
+
+    <section id="education" class="section">
+      <h2>학력</h2>
+      <p>충주예성여자중학교 졸업</p>
+      <p>충주상업고등학교 졸업 예정</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>기술 스택</h2>
+      <ul>
+        <li>포토샵</li>
+        <li>프리미어프로</li>
+        <li>애프터이펙트</li>
+        <li>캡컷 등등</li>
+      </ul>
+    </section>
+
+    <section id="certificates" class="section">
+      <h2>자격증</h2>
+      <h3>ITQ</h3>
+      <ul>
+        <li>엑셀 (2023 취득)</li>
+        <li>한글 (2023 취득)</li>
+      </ul>
+    </section>
+
+    <section id="awards" class="section">
+      <h2>수상 이력</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>수상일자</th><th>수상명</th><th>수상내용</th><th>수상기관</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2025.05.29</td><td>충북상업경진대회</td><td>대회 홍보 크리에이터 금상</td><td>충북교육청</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>연락처</h2>
+      <p>이메일: <a href="mailto:eunhak0319@gmail.com">sgagjq132@gmail.com</a></p>
+      <p>인스타그램: <a href="https://instagram.com/eh_lee19" target="_blank">@dud7__23</a></p>
+      <p>X(구 트위터): <a href="https://blog.naver.com/nsw1ss" target="_blank">@young_723_</a></p>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
